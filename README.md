@@ -14,7 +14,7 @@ VirtualFace it's a simple python library to generate a face
 `sudo python install.py -u`
 
 ## How to use
-```
+```python
 import terminal_virtualface as virtualface
 virtualface.face()
 ```
