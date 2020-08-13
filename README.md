@@ -14,8 +14,10 @@ VirtualFace it's a simple python library to generate a face
 `sudo python install.py -u`
 
 ## How to use
-`import terminal_virtualface as virtualface
-virtualface.face()`
+```
+import terminal_virtualface as virtualface
+virtualface.face()
+```
 
 Parameters:
 - **expr**, str, facial expression. "normal" for default. Available expression it's only "normal".
