@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os,sys,random,thread
-version="0.1.1"
+version="0.1.2"
 def face(expr="normal",speak=False):
 	def clear():
 		os.system('cls' if os.name=='nt' else 'clear')
@@ -20,20 +20,22 @@ def face(expr="normal",speak=False):
 			perc=100
 		elif perc<0:
 			perc=0
-		return int(width()*perc/100)
+		return int(width*perc/100)
 	def lenheight(perc=50):
 		if perc>100:
 			perc=100
 		elif perc<0:
 			perc=0
-		return int(height()*perc/100)
+		return int(height*perc/100)
 	def percentage(perc,m):
 		return m*perc/100
 	def centerwidth(txt):
-		return width()/2-len(txt)/2
+		return width/2-len(txt)/2
 	def printxy(x,y,text):
 		sys.stdout.write("\x1b7\x1b[%d;%df%s\x1b8"%(y,x,text))
 		sys.stdout.flush()
+	global width;width=width()
+	global height;height=height()
 	####
 	runners=[]
 	#
@@ -46,7 +48,7 @@ def face(expr="normal",speak=False):
 		#
 		brow="#"*lenwidth(25)
 		# brow length, first[x,y], second[x,y]
-		pos=[len(brow),[lenwidth(12),lenheight(13)],[width()-lenwidth(12)-len(brow),lenheight(13)]]
+		pos=[len(brow),[lenwidth(12),lenheight(13)],[width-lenwidth(12)-len(brow),lenheight(13)]]
 		printxy(pos[1][0],pos[1][1],brow)
 		printxy(pos[2][0],pos[2][1],brow)
 		#
